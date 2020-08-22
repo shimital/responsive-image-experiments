@@ -1,11 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <img srcset="./images/image-350px.jpg 350w, ./images/image-1000px.jpg 1000w, ./images/image-1500px.jpg 1500w"
+        sizes="(max-width: 350px) 350px, 1500px" src="./images/image-350px.jpg"
+        onload="setLoadedInfo()">
+
+    <div>
+        Image loaded: <span class="px-number"></span>
+    </div>
+
+    <script type="text/javascript">
+        function setLoadedInfo() {
+            const imgElement = document.querySelector('img');
+            const currentSrc = imgElement.currentSrc;
+            const srcParts = currentSrc.split('/');
+            const fileName = srcParts[srcParts.length - 1];
+            document.querySelector('.px-number').innerHTML = fileName;
+        }
+    </script>
 </body>
+
 </html>
