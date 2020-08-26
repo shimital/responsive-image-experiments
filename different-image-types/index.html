@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        .picture-element, source {
+            width: 100%;
+        }
+    </style>
 </head>
+
 <body>
-    
+
+    <picture class="picture-element">
+        <source type="image/webp" srcset="./images/image.webp">
+        <source type="image/jpg" srcset="./images/image.jpg">
+        <img src="./images/image.jpg">
+    </picture>
+
 </body>
+
 </html>
